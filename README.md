@@ -16,12 +16,6 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
-In the existing development workspace, its installed environment can be reused:
-
-```powershell
-..\.venv\Scripts\python.exe -m uvicorn app:app --host 127.0.0.1 --port 8000
-```
-
 On Linux/macOS: create the environment with `python3.12 -m venv .venv`, then use
 `.venv/bin/python` in place of `.\.venv\Scripts\python.exe` in the commands above.
 Keep the server terminal open. Restart after editing `.env`.
