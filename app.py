@@ -18,7 +18,7 @@ app = FastAPI(title="GridWise", version="1.0.0",
 
 @app.exception_handler(RequestValidationError)
 async def invalid_request(request, exc):
-    # Only schema locations/messages, never submitted values or exception contexts.
+ 
     issues = [{"field": ".".join(str(part) for part in e["loc"]),
                "message": e["msg"], "type": e["type"]} for e in exc.errors()]
     return JSONResponse(status_code=400, content={"error": "invalid_request",
